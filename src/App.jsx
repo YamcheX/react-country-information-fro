@@ -7,23 +7,14 @@ import regionColor from "./helpers/regionColor.js";
 function App() {
     console.log(regionColor('Asia'));
 
-    const [countriesInfo, setCountriesInfo] = useState({
-        name: '',
-        population: 0,
-        flag: '',
-        region: '',
-    });
+
+    const [countries, setCountries] = useState([]);
 
     async function fetchCountry (){
         try {
             const response = await axios.get('https://restcountries.com/v3.1/independent?status=true');
-            console.log(response.data[0].flags);
-            setCountriesInfo({
-                name: response.data[0].name.official,
-                population: response.data[0].population,
-                flag: response.data[0].flags.png,
-                region: response.data[0].region,
-            });
+            response.data.sort((a,b) => a.population - b.population);
+            setCountries(response.data);
             console.log(response.data[0].region);
 
         } catch (e){
@@ -33,12 +24,19 @@ function App() {
 
     return (
         <>
-        <h1>World Regions</h1>
+        <h2>World Regions</h2>
             <ul>
-                <li>{countriesInfo.name}</li>
-                <p>Has a population of {countriesInfo.population} of people</p>
-                <img src={countriesInfo.flag} alt="country flag"/>
-            </ul>
+                {countries.map((country) => (
+                    <li key={country.cca3} className={regionColor(country.region)}>
+                        <span className='country-flag'><img src={country.flags.png} alt="country flag"/></span>
+                        <h3 className='country-name'>{country.name.official}</h3>
+                        <p>Has a population of {country.population} of people</p>
+
+                    </li>
+                ))}
+             </ul>
+
+
             <button type='button' onClick={fetchCountry}>Haal de info op</button>
         </>
     )
