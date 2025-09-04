@@ -1,0 +1,42 @@
+
+.world-map {
+
+}
+
+.country-list {
+
+}
+
+.country-name {
+
+}
+
+.country-population {
+
+}
+
+/****** Region colors ******/
+
+.blue {
+  color: blue;
+}
+
+.green {
+   color: forestgreen;
+}
+
+.red {
+    color: red;
+}
+
+.yellow {
+    color: yellow;
+}
+
+.purple {
+    color: purple;
+}
+
+.default {
+    color: dimgrey;
+}
