@@ -1,19 +1,38 @@
 
-.world-map {
+.page-selection-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: ;
 
+}
+
+.world-map {
+    width: 1000px;
 }
 
 .country-list {
-
+    width: 100%;
+    list-style-type: none;
+    column-count: 3;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    background-color: #FAFAFA;
+    padding: 30px;
+    font-size: 24px;
+    margin: 0;
 }
 
-.country-name {
-
+.flag {
+    width: 30px;
+    margin: 0 10px 0 0;
 }
 
-.country-population {
-
+.population {
+    margin: 0 0 12px 0;
+    font-size: 14px;
 }
+
 
 /****** Region colors ******/
 
@@ -40,3 +59,78 @@
 .default {
     color: dimgrey;
 }
+
+/*Deel 2*/
+
+.search-form {
+    margin: 0 auto;
+}
+
+.search-form button {
+    text-transform: uppercase;
+    background-color: #A7D160;
+    border: 1px solid #A7D160;
+    border-radius: 0 8px 8px 0;
+    padding: 8px 16px;
+    color: #292929;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+
+}
+
+.search-form input {
+    border: 1px solid grey;
+    border-right-color: transparent;
+    margin-right: -4px;
+    font-family: "Roboto Condensed", sans-serif;
+    padding: 8px;
+    border-radius: 8px 0 0 8px;
+    width: 300px;
+    font-size: 16px;
+}
+
+.search-result-box {
+    border-radius: 8px;
+    box-shadow: .25rem .5rem 1rem 0 rgba(0,0,0,0.1);
+    padding: 24px;
+    margin: 72px 0;
+}
+
+.search-result-box h2 {
+    font-size: 36px;
+    padding: 0 0 12px 0;
+}
+
+.search-result-box p {
+    padding: 8px 0;
+}
+
+.flag {
+    width: 40px;
+    margin-right: 16px;
+}
+
+.flag-title-container {
+    border-bottom: 1px solid #EDEDED;
+    display: flex;
+    align-items: baseline;
+    margin: 0 0 12px 0;
+}
+
+.error-message {
+    padding: 16px 0;
+    color: indianred;
+    border-radius: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+

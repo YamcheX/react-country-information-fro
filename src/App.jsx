@@ -56,14 +56,14 @@ function App() {
                 <img src={worldMap} alt='World Map' className='world-map'/>
             </header>
             <main>
-                <section>
+                <section className='page-selection-column'>
         <h2>World Regions</h2>
             <ul className='country-list'>
                 {countries.map((country) => (
-                    <li key={country.cca3} className={regionColor(country.region)}>
-                        <img src={country.flags.png} alt={`Flag of ${country.name.common}`} className='country-flag'/>
-                        <h3 className='country-name'>{country.name.common}</h3>
-                        <p className='country-population'>Has a population of {country.population} people</p>
+                    <li key={country.cca3}>
+                        <img src={country.flags.png} alt={`Flag of ${country.name.common}`} className='flag'/>
+                        <h3 className={regionColor(country.region)}>{country.name.common}</h3>
+                        <p className='population'>Has a population of {country.population} people</p>
 
                     </li>
                 ))}
@@ -71,10 +71,10 @@ function App() {
             <button type='button' onClick={fetchCountry}>Haal de info op</button>
                 </section>
 
-                <section>
+                <section className='page-section-column'>
                     <h2>Search country information</h2>
                     <img src={spinningGlobe} alt="Spinning Globe" className='spinning-globe'/>
-                    <form onSubmit={handleSubmit(onFormSubmit)}>
+                    <form onSubmit={handleSubmit(onFormSubmit)} className='search-form'>
                         <input
                             type='text'
                             id='query-field'
@@ -87,10 +87,10 @@ function App() {
                         {/*// {error && <span id="error-message">{error}</span>}*/}
                     </form>
                     {countryInfo.name && !error && (
-                    <article>
-                    <span>
+                    <article className='search-result-box'>
+                    <span className='flag-title-container'>
 
-                    <img src={countryInfo.flags?.png} alt='country flag' className='country-flag'/>
+                    <img src={countryInfo.flags?.png} alt='country flag' className='flag'/>
                         <h2>{countryInfo.name?.common}</h2>
                     </span>
                     {countryInfo.name && (
